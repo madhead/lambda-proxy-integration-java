@@ -21,9 +21,6 @@ subprojects {
         imports {
             mavenBom("org.junit:junit-bom:5.3.1")
         }
-        dependencies {
-            dependency("com.google.guava:guava:26.0-jre")
-        }
     }
 
     configure<BintrayExtension> {

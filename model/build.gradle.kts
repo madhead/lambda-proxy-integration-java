@@ -6,8 +6,6 @@ plugins {
 }
 
 dependencies {
-    implementation("com.google.guava:guava")
-
     testImplementation("org.junit.jupiter:junit-jupiter-api")
     testImplementation("org.junit.jupiter:junit-jupiter-params")
     testImplementation("org.skyscreamer:jsonassert")

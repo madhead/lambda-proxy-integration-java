@@ -1,9 +1,8 @@
 package by.dev.madhead.utils.lambda_proxy_integration.model;
 
-import com.google.common.base.MoreObjects;
-
 import java.util.Map;
 import java.util.Objects;
+import java.util.StringJoiner;
 
 public class ProxyIntegrationResponse {
     private Boolean isBase64Encoded;
@@ -91,12 +90,11 @@ public class ProxyIntegrationResponse {
 
     @Override
     public String toString() {
-        return MoreObjects
-            .toStringHelper(this)
-            .add("isBase64Encoded", isBase64Encoded)
-            .add("statusCode", statusCode)
-            .add("headers", headers)
-            .add("body", body)
+        return new StringJoiner(", ", ProxyIntegrationResponse.class.getSimpleName() + "[", "]")
+            .add("isBase64Encoded=" + isBase64Encoded)
+            .add("statusCode=" + statusCode)
+            .add("headers=" + headers)
+            .add("body='" + body + "'")
             .toString();
     }
 }

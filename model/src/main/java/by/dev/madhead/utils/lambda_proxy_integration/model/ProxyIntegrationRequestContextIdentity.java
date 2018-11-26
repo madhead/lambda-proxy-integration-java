@@ -1,8 +1,7 @@
 package by.dev.madhead.utils.lambda_proxy_integration.model;
 
-import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
+import java.util.StringJoiner;
 
 public class ProxyIntegrationRequestContextIdentity {
     private String cognitoIdentityPoolId;
@@ -142,19 +141,18 @@ public class ProxyIntegrationRequestContextIdentity {
 
     @Override
     public String toString() {
-        return MoreObjects
-            .toStringHelper(this)
-            .add("cognitoIdentityPoolId", cognitoIdentityPoolId)
-            .add("accountId", accountId)
-            .add("cognitoIdentityId", cognitoIdentityId)
-            .add("caller", caller)
-            .add("apiKey", apiKey)
-            .add("sourceIp", sourceIp)
-            .add("cognitoAuthenticationType", cognitoAuthenticationType)
-            .add("cognitoAuthenticationProvider", cognitoAuthenticationProvider)
-            .add("userArn", userArn)
-            .add("userAgent", userAgent)
-            .add("user", user)
+        return new StringJoiner(", ", ProxyIntegrationRequestContextIdentity.class.getSimpleName() + "[", "]")
+            .add("cognitoIdentityPoolId='" + cognitoIdentityPoolId + "'")
+            .add("accountId='" + accountId + "'")
+            .add("cognitoIdentityId='" + cognitoIdentityId + "'")
+            .add("caller='" + caller + "'")
+            .add("apiKey='" + apiKey + "'")
+            .add("sourceIp='" + sourceIp + "'")
+            .add("cognitoAuthenticationType='" + cognitoAuthenticationType + "'")
+            .add("cognitoAuthenticationProvider='" + cognitoAuthenticationProvider + "'")
+            .add("userArn='" + userArn + "'")
+            .add("userAgent='" + userAgent + "'")
+            .add("user='" + user + "'")
             .toString();
     }
 }

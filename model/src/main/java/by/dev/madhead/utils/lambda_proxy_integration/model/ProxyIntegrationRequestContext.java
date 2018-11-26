@@ -1,8 +1,7 @@
 package by.dev.madhead.utils.lambda_proxy_integration.model;
 
-import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
+import java.util.StringJoiner;
 
 public class ProxyIntegrationRequestContext {
     private String accountId;
@@ -100,16 +99,15 @@ public class ProxyIntegrationRequestContext {
 
     @Override
     public String toString() {
-        return MoreObjects
-            .toStringHelper(this)
-            .add("accountId", accountId)
-            .add("resourceId", resourceId)
-            .add("stage", stage)
-            .add("requestId", requestId)
-            .add("identity", identity)
-            .add("resourcePath", resourcePath)
-            .add("httpMethod", httpMethod)
-            .add("apiId", apiId)
+        return new StringJoiner(", ", ProxyIntegrationRequestContext.class.getSimpleName() + "[", "]")
+            .add("accountId='" + accountId + "'")
+            .add("resourceId='" + resourceId + "'")
+            .add("stage='" + stage + "'")
+            .add("requestId='" + requestId + "'")
+            .add("identity=" + identity)
+            .add("resourcePath='" + resourcePath + "'")
+            .add("httpMethod='" + httpMethod + "'")
+            .add("apiId='" + apiId + "'")
             .toString();
     }
 }

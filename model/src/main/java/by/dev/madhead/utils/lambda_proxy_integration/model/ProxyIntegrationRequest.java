@@ -1,9 +1,8 @@
 package by.dev.madhead.utils.lambda_proxy_integration.model;
 
-import com.google.common.base.MoreObjects;
-
 import java.util.Map;
 import java.util.Objects;
+import java.util.StringJoiner;
 
 public class ProxyIntegrationRequest {
     private String resource;
@@ -132,18 +131,17 @@ public class ProxyIntegrationRequest {
 
     @Override
     public String toString() {
-        return MoreObjects
-            .toStringHelper(this)
-            .add("resource", resource)
-            .add("path", path)
-            .add("httpMethod", httpMethod)
-            .add("headers", headers)
-            .add("queryStringParameters", queryStringParameters)
-            .add("pathParameters", pathParameters)
-            .add("stageVariables", stageVariables)
-            .add("requestContext", requestContext)
-            .add("body", body)
-            .add("isBase64Encoded", isBase64Encoded)
+        return new StringJoiner(", ", ProxyIntegrationRequest.class.getSimpleName() + "[", "]")
+            .add("resource='" + resource + "'")
+            .add("path='" + path + "'")
+            .add("httpMethod='" + httpMethod + "'")
+            .add("headers=" + headers)
+            .add("queryStringParameters=" + queryStringParameters)
+            .add("pathParameters=" + pathParameters)
+            .add("stageVariables=" + stageVariables)
+            .add("requestContext=" + requestContext)
+            .add("body='" + body + "'")
+            .add("isBase64Encoded=" + isBase64Encoded)
             .toString();
     }
 }

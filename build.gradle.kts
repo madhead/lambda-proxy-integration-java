@@ -29,7 +29,9 @@ subprojects {
     }
 }
 
-task<Wrapper>("wrapper") {
-    gradleVersion = "4.10.2"
-    distributionType = Wrapper.DistributionType.ALL
+tasks {
+    wrapper {
+        gradleVersion = "5.0"
+        distributionType = Wrapper.DistributionType.ALL
+    }
 }

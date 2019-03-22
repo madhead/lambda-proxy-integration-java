@@ -11,7 +11,9 @@ plugins {
 subprojects {
     apply<DependencyManagementPlugin>()
     apply<MavenPublishPlugin>()
-    apply<BintrayPlugin>()
+    if (this != project(":lambda-test")) {
+        apply<BintrayPlugin>()
+    }
 
     repositories {
         jcenter()
@@ -23,9 +25,11 @@ subprojects {
         }
     }
 
-    configure<BintrayExtension> {
-        user = System.getenv("BINTRAY_USER")
-        key = System.getenv("BINTRAY_KEY")
+    if (this != project(":lambda-test")) {
+        configure<BintrayExtension> {
+            user = System.getenv("BINTRAY_USER")
+            key = System.getenv("BINTRAY_KEY")
+        }
     }
 }
 

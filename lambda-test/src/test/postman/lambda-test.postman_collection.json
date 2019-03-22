@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "42e8c6de-4a1b-4de5-981a-d1a5f4241a17",
+		"name": "lambda-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c75289b7-d539-402b-b8c5-addf17ec6582",
+						"exec": [
+							"pm.test('HTTP status code is 200', function () {",
+							"  pm.expect(pm.response.code).to.equal(200);",
+							"});",
+							"pm.test('Content-Type is application/json', function () {",
+							"  pm.response.to.be.header('Content-Type', 'application/json');",
+							"});",
+							"pm.test('resource is /', function () {",
+							"  pm.expect(pm.response.json().input.resource).to.equal('/');",
+							"});",
+							"pm.test('path is /', function () {",
+							"  pm.expect(pm.response.json().input.path).to.equal('/');",
+							"});",
+							"pm.test('httpMethod is GET', function () {",
+							"  pm.expect(pm.response.json().input.httpMethod).to.equal('GET');",
+							"});",
+							"pm.test('headers.Accept is application/json', function () {",
+							"  pm.expect(pm.response.json().input.headers.Accept).to.equal('application/json');",
+							"});",
+							"pm.test('headers.Host is 1hm3fn8j06.execute-api.us-east-1.amazonaws.com', function () {",
+							"  pm.expect(pm.response.json().input.headers.Host).to.equal('1hm3fn8j06.execute-api.us-east-1.amazonaws.com');",
+							"});",
+							"pm.test('multiValueHeaders.Accept is [application/json]', function () {",
+							"  pm.expect(pm.response.json().input.multiValueHeaders.Accept).to.eql(['application/json']);",
+							"});",
+							"pm.test('multiValueHeaders.Host is [1hm3fn8j06.execute-api.us-east-1.amazonaws.com]', function () {",
+							"  pm.expect(pm.response.json().input.multiValueHeaders.Host).to.eql(['1hm3fn8j06.execute-api.us-east-1.amazonaws.com']);",
+							"});",
+							"pm.test('queryStringParameters is null', function () {",
+							"  pm.expect(pm.response.json().input.queryStringParameters).to.equal(null);",
+							"});",
+							"pm.test('multiValueQueryStringParameters is null', function () {",
+							"  pm.expect(pm.response.json().input.multiValueQueryStringParameters).to.equal(null);",
+							"});",
+							"pm.test('pathParameters is null', function () {",
+							"  pm.expect(pm.response.json().input.pathParameters).to.equal(null);",
+							"});",
+							"pm.test('stageVariables is null', function () {",
+							"  pm.expect(pm.response.json().input.stageVariables).to.equal(null);",
+							"});",
+							"pm.test('requestContext.apiId is 1hm3fn8j06', function () {",
+							"  pm.expect(pm.response.json().input.requestContext.apiId).to.equal('1hm3fn8j06');",
+							"});",
+							"pm.test('requestContext.domainName is 1hm3fn8j06.execute-api.us-east-1.amazonaws.com', function () {",
+							"  pm.expect(pm.response.json().input.requestContext.domainName).to.equal('1hm3fn8j06.execute-api.us-east-1.amazonaws.com');",
+							"});",
+							"pm.test('requestContext.domainPrefix is 1hm3fn8j06', function () {",
+							"  pm.expect(pm.response.json().input.requestContext.domainPrefix).to.equal('1hm3fn8j06');",
+							"});",
+							"pm.test('requestContext.httpMethod is POST', function () {",
+							"  pm.expect(pm.response.json().input.requestContext.httpMethod).to.equal('GET');",
+							"});",
+							"pm.test('requestContext.path is /default', function () {",
+							"  pm.expect(pm.response.json().input.requestContext.path).to.equal('/default');",
+							"});",
+							"pm.test('requestContext.resourceId is ycizbmosdl', function () {",
+							"  pm.expect(pm.response.json().input.requestContext.resourceId).to.equal('ycizbmosdl');",
+							"});",
+							"pm.test('requestContext.resourcePath is /', function () {",
+							"  pm.expect(pm.response.json().input.requestContext.resourcePath).to.equal('/');",
+							"});",
+							"pm.test('requestContext.stage is default', function () {",
+							"  pm.expect(pm.response.json().input.requestContext.stage).to.equal('default');",
+							"});",
+							"pm.test('body is null', function () {",
+							"  pm.expect(pm.response.json().input.body).to.equal(null);",
+							"});",
+							"pm.test('base64Encoded is null', function () {",
+							"  pm.expect(pm.response.json().input.base64Encoded).to.equal(null);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://1hm3fn8j06.execute-api.us-east-1.amazonaws.com/default",
+					"protocol": "https",
+					"host": [
+						"1hm3fn8j06",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c75289b7-d539-402b-b8c5-addf17ec6582",
+						"exec": [
+							"pm.test('HTTP status code is 200', function () {",
+							"  pm.expect(pm.response.code).to.equal(200);",
+							"});",
+							"pm.test('Content-Type is application/json', function () {",
+							"  pm.response.to.be.header('Content-Type', 'application/json');",
+							"});",
+							"pm.test('resource is /', function () {",
+							"  pm.expect(pm.response.json().input.resource).to.equal('/');",
+							"});",
+							"pm.test('path is /', function () {",
+							"  pm.expect(pm.response.json().input.path).to.equal('/');",
+							"});",
+							"pm.test('httpMethod is POST', function () {",
+							"  pm.expect(pm.response.json().input.httpMethod).to.equal('POST');",
+							"});",
+							"pm.test('headers.Accept is application/json', function () {",
+							"  pm.expect(pm.response.json().input.headers.Accept).to.equal('application/json');",
+							"});",
+							"pm.test('headers.Host is 1hm3fn8j06.execute-api.us-east-1.amazonaws.com', function () {",
+							"  pm.expect(pm.response.json().input.headers.Host).to.equal('1hm3fn8j06.execute-api.us-east-1.amazonaws.com');",
+							"});",
+							"pm.test('headers.X-Seconds-To-Mars is 30', function () {",
+							"  pm.expect(pm.response.json().input.headers['X-Seconds-To-Mars']).to.equal('30');",
+							"});",
+							"pm.test('multiValueHeaders.Accept is [application/json]', function () {",
+							"  pm.expect(pm.response.json().input.multiValueHeaders.Accept).to.eql(['application/json']);",
+							"});",
+							"pm.test('multiValueHeaders.Host is [1hm3fn8j06.execute-api.us-east-1.amazonaws.com]', function () {",
+							"  pm.expect(pm.response.json().input.multiValueHeaders.Host).to.eql(['1hm3fn8j06.execute-api.us-east-1.amazonaws.com']);",
+							"});",
+							"pm.test('multiValueHeaders.X-Seconds-To-Mars is 30', function () {",
+							"  pm.expect(pm.response.json().input.multiValueHeaders['X-Seconds-To-Mars']).to.eql(['30']);",
+							"});",
+							"pm.test('queryStringParameters is correct', function () {",
+							"  pm.expect(pm.response.json().input.queryStringParameters).to.eql({",
+							"    'secondsToMars': '30',",
+							"    'skywalkers': 'Leia'",
+							"  });",
+							"});",
+							"pm.test('multiValueQueryStringParameters is correct', function () {",
+							"  pm.expect(pm.response.json().input.multiValueQueryStringParameters).to.eql({",
+							"    'secondsToMars': [",
+							"      '30'",
+							"    ],",
+							"    'skywalkers': [",
+							"      'Luke',",
+							"      'Leia'",
+							"    ]",
+							"  });",
+							"});",
+							"pm.test('pathParameters is null', function () {",
+							"  pm.expect(pm.response.json().input.pathParameters).to.equal(null);",
+							"});",
+							"pm.test('stageVariables is null', function () {",
+							"  pm.expect(pm.response.json().input.stageVariables).to.equal(null);",
+							"});",
+							"pm.test('requestContext.apiId is 1hm3fn8j06', function () {",
+							"  pm.expect(pm.response.json().input.requestContext.apiId).to.equal('1hm3fn8j06');",
+							"});",
+							"pm.test('requestContext.domainName is 1hm3fn8j06.execute-api.us-east-1.amazonaws.com', function () {",
+							"  pm.expect(pm.response.json().input.requestContext.domainName).to.equal('1hm3fn8j06.execute-api.us-east-1.amazonaws.com');",
+							"});",
+							"pm.test('requestContext.domainPrefix is 1hm3fn8j06', function () {",
+							"  pm.expect(pm.response.json().input.requestContext.domainPrefix).to.equal('1hm3fn8j06');",
+							"});",
+							"pm.test('requestContext.httpMethod is POST', function () {",
+							"  pm.expect(pm.response.json().input.requestContext.httpMethod).to.equal('POST');",
+							"});",
+							"pm.test('requestContext.path is /default', function () {",
+							"  pm.expect(pm.response.json().input.requestContext.path).to.equal('/default');",
+							"});",
+							"pm.test('requestContext.resourceId is ycizbmosdl', function () {",
+							"  pm.expect(pm.response.json().input.requestContext.resourceId).to.equal('ycizbmosdl');",
+							"});",
+							"pm.test('requestContext.resourcePath is /', function () {",
+							"  pm.expect(pm.response.json().input.requestContext.resourcePath).to.equal('/');",
+							"});",
+							"pm.test('requestContext.stage is default', function () {",
+							"  pm.expect(pm.response.json().input.requestContext.stage).to.equal('default');",
+							"});",
+							"pm.test('body is correct', function () {",
+							"  pm.expect(JSON.parse(pm.response.json().input.body)).to.eql({",
+							"    'hello': 'world!'",
+							"  });",
+							"});",
+							"pm.test('base64Encoded is null', function () {",
+							"  pm.expect(pm.response.json().input.base64Encoded).to.equal(null);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Seconds-To-Mars",
+						"value": "30",
+						"type": "text"
+					},
+					{
+						"key": "X-Skywalkers",
+						"value": "Luke",
+						"type": "text"
+					},
+					{
+						"key": "X-Skywalkers",
+						"value": "Leia",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"hello\": \"world!\"\n}\n"
+				},
+				"url": {
+					"raw": "https://1hm3fn8j06.execute-api.us-east-1.amazonaws.com/default?secondsToMars=30&skywalkers=Luke&skywalkers=Leia",
+					"protocol": "https",
+					"host": [
+						"1hm3fn8j06",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default"
+					],
+					"query": [
+						{
+							"key": "secondsToMars",
+							"value": "30"
+						},
+						{
+							"key": "skywalkers",
+							"value": "Luke"
+						},
+						{
+							"key": "skywalkers",
+							"value": "Leia"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

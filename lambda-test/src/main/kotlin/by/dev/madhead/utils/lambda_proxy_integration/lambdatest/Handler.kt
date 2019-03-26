@@ -5,6 +5,7 @@ import by.dev.madhead.utils.lambda_proxy_integration.model.ProxyIntegrationRespo
 import com.amazonaws.services.lambda.runtime.Context
 import com.amazonaws.services.lambda.runtime.RequestHandler
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.databind.SerializationFeature
 import org.apache.logging.log4j.LogManager
 
 private data class Response(
@@ -18,7 +19,7 @@ class Handler : RequestHandler<ProxyIntegrationRequest, ProxyIntegrationResponse
         private val logger = LogManager.getLogger(Handler::class.java)
 
         @JvmStatic
-        private val objectMapper = ObjectMapper()
+        private val objectMapper = ObjectMapper().configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false)
     }
 
     override fun handleRequest(input: ProxyIntegrationRequest, context: Context): ProxyIntegrationResponse {

@@ -17,6 +17,7 @@ subprojects {
 
     repositories {
         jcenter()
+        maven("https://kotlin.bintray.com/kotlinx")
     }
 
     configure<DependencyManagementExtension> {

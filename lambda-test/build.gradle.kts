@@ -16,6 +16,19 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind")
     implementation("org.apache.logging.log4j:log4j-core")
     implementation("com.amazonaws:aws-lambda-java-log4j2:1.1.0")
+
+    testImplementation(platform("org.junit:junit-bom:5.4.0"))
+    testRuntimeOnly(platform("org.junit:junit-bom:5.4.0"))
+
+    testImplementation(platform("com.fasterxml.jackson.module:jackson-module-kotlin"))
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
+    testImplementation("org.junit.jupiter:junit-jupiter-api")
+    testImplementation("org.junit.jupiter:junit-jupiter-params")
+    testImplementation("io.ktor:ktor-client-cio:1.1.3")
+    testImplementation("io.ktor:ktor-client-jackson:1.1.3")
+    testImplementation("io.ktor:ktor-client-logging:1.1.3")
+    testImplementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
 
 tasks {

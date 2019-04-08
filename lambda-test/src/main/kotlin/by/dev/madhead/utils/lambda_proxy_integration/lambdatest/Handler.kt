@@ -8,11 +8,6 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
 import org.apache.logging.log4j.LogManager
 
-private data class Response(
-    val input: ProxyIntegrationRequest,
-    val context: Context
-)
-
 class Handler : RequestHandler<ProxyIntegrationRequest, ProxyIntegrationResponse> {
     companion object {
         @JvmStatic
@@ -26,7 +21,7 @@ class Handler : RequestHandler<ProxyIntegrationRequest, ProxyIntegrationResponse
         logger.debug(objectMapper.writeValueAsString(input))
         logger.debug(objectMapper.writeValueAsString(context))
 
-        val response = Response(input, context)
+        val response = Response(input)
 
         logger.debug(objectMapper.writeValueAsString(input))
 

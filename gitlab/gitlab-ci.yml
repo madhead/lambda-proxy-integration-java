@@ -107,11 +107,15 @@ smoke:
   stage: Test
   image:
     name: postman/newman
-#    entrypoint:
-#      - /bin/sh
+    entrypoint:
+      - /bin/sh
+      - -c
   dependencies: []
   script:
-    - run lambda-test/src/test/postman/lambda-test.postman_collection.json
+#    - run lambda-test/src/test/postman/lambda-test.postman_collection.json
+    - pwd
+    - ls -la
+    - newman run lambda-test/src/test/postman/lambda-test.postman_collection.json
 
 bintray:
   stage: Publish

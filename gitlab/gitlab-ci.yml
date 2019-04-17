@@ -107,7 +107,8 @@ smoke:
   stage: Test
   image:
     name: postman/newman
-    entrypoint: /bin/sh
+    entrypoint:
+      - /bin/sh
   dependencies: []
   script:
     - pwd

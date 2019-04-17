@@ -105,10 +105,13 @@ gradle-version:
 
 smoke:
   stage: Test
-  image: openjdk:8
+  image:
+    name: postman/newman
+    entrypoint: /bin/sh
   dependencies: []
   script:
-    - ./gradlew test
+    - pwd
+    - ls -la
 
 bintray:
   stage: Publish

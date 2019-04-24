@@ -4,155 +4,167 @@ import java.util.Objects;
 import java.util.StringJoiner;
 
 public class ProxyIntegrationRequestContextIdentity {
-    private String cognitoIdentityPoolId;
     private String accountId;
-    private String cognitoIdentityId;
-    private String caller;
     private String apiKey;
-    private String sourceIp;
-    private String cognitoAuthenticationType;
+    private String apiKeyId;
+    private String caller;
     private String cognitoAuthenticationProvider;
-    private String userArn;
-    private String userAgent;
+    private String cognitoAuthenticationType;
+    private String cognitoIdentityId;
+    private String cognitoIdentityPoolId;
+    private String sourceIp;
     private String user;
-
-    public String getCognitoIdentityPoolId() {
-        return cognitoIdentityPoolId;
-    }
-
-    public void setCognitoIdentityPoolId(final String cognitoIdentityPoolId) {
-        this.cognitoIdentityPoolId = cognitoIdentityPoolId;
-    }
+    private String userAgent;
+    private String userArn;
 
     public String getAccountId() {
         return accountId;
     }
 
-    public void setAccountId(final String accountId) {
+    public void setAccountId(String accountId) {
         this.accountId = accountId;
-    }
-
-    public String getCognitoIdentityId() {
-        return cognitoIdentityId;
-    }
-
-    public void setCognitoIdentityId(final String cognitoIdentityId) {
-        this.cognitoIdentityId = cognitoIdentityId;
-    }
-
-    public String getCaller() {
-        return caller;
-    }
-
-    public void setCaller(final String caller) {
-        this.caller = caller;
     }
 
     public String getApiKey() {
         return apiKey;
     }
 
-    public void setApiKey(final String apiKey) {
+    public void setApiKey(String apiKey) {
         this.apiKey = apiKey;
     }
 
-    public String getSourceIp() {
-        return sourceIp;
+    public String getApiKeyId() {
+        return apiKeyId;
     }
 
-    public void setSourceIp(final String sourceIp) {
-        this.sourceIp = sourceIp;
+    public void setApiKeyId(String apiKeyId) {
+        this.apiKeyId = apiKeyId;
     }
 
-    public String getCognitoAuthenticationType() {
-        return cognitoAuthenticationType;
+    public String getCaller() {
+        return caller;
     }
 
-    public void setCognitoAuthenticationType(final String cognitoAuthenticationType) {
-        this.cognitoAuthenticationType = cognitoAuthenticationType;
+    public void setCaller(String caller) {
+        this.caller = caller;
     }
 
     public String getCognitoAuthenticationProvider() {
         return cognitoAuthenticationProvider;
     }
 
-    public void setCognitoAuthenticationProvider(final String cognitoAuthenticationProvider) {
+    public void setCognitoAuthenticationProvider(String cognitoAuthenticationProvider) {
         this.cognitoAuthenticationProvider = cognitoAuthenticationProvider;
     }
 
-    public String getUserArn() {
-        return userArn;
+    public String getCognitoAuthenticationType() {
+        return cognitoAuthenticationType;
     }
 
-    public void setUserArn(final String userArn) {
-        this.userArn = userArn;
+    public void setCognitoAuthenticationType(String cognitoAuthenticationType) {
+        this.cognitoAuthenticationType = cognitoAuthenticationType;
     }
 
-    public String getUserAgent() {
-        return userAgent;
+    public String getCognitoIdentityId() {
+        return cognitoIdentityId;
     }
 
-    public void setUserAgent(final String userAgent) {
-        this.userAgent = userAgent;
+    public void setCognitoIdentityId(String cognitoIdentityId) {
+        this.cognitoIdentityId = cognitoIdentityId;
+    }
+
+    public String getCognitoIdentityPoolId() {
+        return cognitoIdentityPoolId;
+    }
+
+    public void setCognitoIdentityPoolId(String cognitoIdentityPoolId) {
+        this.cognitoIdentityPoolId = cognitoIdentityPoolId;
+    }
+
+    public String getSourceIp() {
+        return sourceIp;
+    }
+
+    public void setSourceIp(String sourceIp) {
+        this.sourceIp = sourceIp;
     }
 
     public String getUser() {
         return user;
     }
 
-    public void setUser(final String user) {
+    public void setUser(String user) {
         this.user = user;
     }
 
+    public String getUserAgent() {
+        return userAgent;
+    }
+
+    public void setUserAgent(String userAgent) {
+        this.userAgent = userAgent;
+    }
+
+    public String getUserArn() {
+        return userArn;
+    }
+
+    public void setUserArn(String userArn) {
+        this.userArn = userArn;
+    }
+
     @Override
-    public boolean equals(final Object o) {
+    public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ProxyIntegrationRequestContextIdentity that = (ProxyIntegrationRequestContextIdentity) o;
-        return Objects.equals(cognitoIdentityPoolId, that.cognitoIdentityPoolId) &&
-               Objects.equals(accountId, that.accountId) &&
-               Objects.equals(cognitoIdentityId, that.cognitoIdentityId) &&
-               Objects.equals(caller, that.caller) &&
+        return Objects.equals(accountId, that.accountId) &&
                Objects.equals(apiKey, that.apiKey) &&
-               Objects.equals(sourceIp, that.sourceIp) &&
-               Objects.equals(cognitoAuthenticationType, that.cognitoAuthenticationType) &&
+               Objects.equals(apiKeyId, that.apiKeyId) &&
+               Objects.equals(caller, that.caller) &&
                Objects.equals(cognitoAuthenticationProvider, that.cognitoAuthenticationProvider) &&
-               Objects.equals(userArn, that.userArn) &&
+               Objects.equals(cognitoAuthenticationType, that.cognitoAuthenticationType) &&
+               Objects.equals(cognitoIdentityId, that.cognitoIdentityId) &&
+               Objects.equals(cognitoIdentityPoolId, that.cognitoIdentityPoolId) &&
+               Objects.equals(sourceIp, that.sourceIp) &&
+               Objects.equals(user, that.user) &&
                Objects.equals(userAgent, that.userAgent) &&
-               Objects.equals(user, that.user);
+               Objects.equals(userArn, that.userArn);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(
-            cognitoIdentityPoolId,
             accountId,
-            cognitoIdentityId,
-            caller,
             apiKey,
-            sourceIp,
-            cognitoAuthenticationType,
+            apiKeyId,
+            caller,
             cognitoAuthenticationProvider,
-            userArn,
+            cognitoAuthenticationType,
+            cognitoIdentityId,
+            cognitoIdentityPoolId,
+            sourceIp,
+            user,
             userAgent,
-            user
+            userArn
         );
     }
 
     @Override
     public String toString() {
         return new StringJoiner(", ", ProxyIntegrationRequestContextIdentity.class.getSimpleName() + "[", "]")
-            .add("cognitoIdentityPoolId='" + cognitoIdentityPoolId + "'")
             .add("accountId='" + accountId + "'")
-            .add("cognitoIdentityId='" + cognitoIdentityId + "'")
-            .add("caller='" + caller + "'")
             .add("apiKey='" + apiKey + "'")
-            .add("sourceIp='" + sourceIp + "'")
-            .add("cognitoAuthenticationType='" + cognitoAuthenticationType + "'")
+            .add("apiKeyId='" + apiKeyId + "'")
+            .add("caller='" + caller + "'")
             .add("cognitoAuthenticationProvider='" + cognitoAuthenticationProvider + "'")
-            .add("userArn='" + userArn + "'")
-            .add("userAgent='" + userAgent + "'")
+            .add("cognitoAuthenticationType='" + cognitoAuthenticationType + "'")
+            .add("cognitoIdentityId='" + cognitoIdentityId + "'")
+            .add("cognitoIdentityPoolId='" + cognitoIdentityPoolId + "'")
+            .add("sourceIp='" + sourceIp + "'")
             .add("user='" + user + "'")
+            .add("userAgent='" + userAgent + "'")
+            .add("userArn='" + userArn + "'")
             .toString();
     }
 }

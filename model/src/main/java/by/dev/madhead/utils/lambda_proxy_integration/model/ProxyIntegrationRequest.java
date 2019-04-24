@@ -1,5 +1,6 @@
 package by.dev.madhead.utils.lambda_proxy_integration.model;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -9,7 +10,9 @@ public class ProxyIntegrationRequest {
     private String path;
     private String httpMethod;
     private Map<String, String> headers;
+    private Map<String, List<String>> multiValueHeaders;
     private Map<String, String> queryStringParameters;
+    private Map<String, List<String>> multiValueQueryStringParameters;
     private Map<String, String> pathParameters;
     private Map<String, String> stageVariables;
     private ProxyIntegrationRequestContext requestContext;
@@ -48,12 +51,28 @@ public class ProxyIntegrationRequest {
         this.headers = headers;
     }
 
+    public Map<String, List<String>> getMultiValueHeaders() {
+        return multiValueHeaders;
+    }
+
+    public void setMultiValueHeaders(Map<String, List<String>> multiValueHeaders) {
+        this.multiValueHeaders = multiValueHeaders;
+    }
+
     public Map<String, String> getQueryStringParameters() {
         return queryStringParameters;
     }
 
     public void setQueryStringParameters(final Map<String, String> queryStringParameters) {
         this.queryStringParameters = queryStringParameters;
+    }
+
+    public Map<String, List<String>> getMultiValueQueryStringParameters() {
+        return multiValueQueryStringParameters;
+    }
+
+    public void setMultiValueQueryStringParameters(Map<String, List<String>> multiValueQueryStringParameters) {
+        this.multiValueQueryStringParameters = multiValueQueryStringParameters;
     }
 
     public Map<String, String> getPathParameters() {
@@ -105,7 +124,9 @@ public class ProxyIntegrationRequest {
                Objects.equals(path, that.path) &&
                Objects.equals(httpMethod, that.httpMethod) &&
                Objects.equals(headers, that.headers) &&
+               Objects.equals(multiValueHeaders, that.multiValueHeaders) &&
                Objects.equals(queryStringParameters, that.queryStringParameters) &&
+               Objects.equals(multiValueQueryStringParameters, that.multiValueQueryStringParameters) &&
                Objects.equals(pathParameters, that.pathParameters) &&
                Objects.equals(stageVariables, that.stageVariables) &&
                Objects.equals(requestContext, that.requestContext) &&
@@ -120,7 +141,9 @@ public class ProxyIntegrationRequest {
             path,
             httpMethod,
             headers,
+            multiValueHeaders,
             queryStringParameters,
+            multiValueQueryStringParameters,
             pathParameters,
             stageVariables,
             requestContext,
@@ -136,7 +159,9 @@ public class ProxyIntegrationRequest {
             .add("path='" + path + "'")
             .add("httpMethod='" + httpMethod + "'")
             .add("headers=" + headers)
+            .add("multiValueHeaders=" + multiValueHeaders)
             .add("queryStringParameters=" + queryStringParameters)
+            .add("multiValueQueryStringParameters=" + multiValueQueryStringParameters)
             .add("pathParameters=" + pathParameters)
             .add("stageVariables=" + stageVariables)
             .add("requestContext=" + requestContext)

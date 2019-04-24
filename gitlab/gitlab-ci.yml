@@ -109,7 +109,7 @@ deploy-test-lambda:
 smoke:
   stage: Integration test
   image:
-    name: postman/newman:ubuntu
+    name: postman/newman
     entrypoint:
       - /bin/sh
       - -c
